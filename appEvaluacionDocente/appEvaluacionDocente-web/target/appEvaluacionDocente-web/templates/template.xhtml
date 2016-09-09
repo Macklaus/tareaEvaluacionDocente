@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+		<h:head>
+			<title><ui:insert name="pageTitle">EvalDoc</ui:insert></title>
+			<link rel="stylesheet" href="#{request.contextPath}/resources/recursos/css/index.css" />
+			<style type="text/css">
+			
+		body {
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			font-size: 14px;
+		}
+		
+		.header {
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			font-size: 18px;
+		}
+		
+		.bottom {
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			font-size: 9px;
+			text-align: center;
+			vertical-align: middle;
+			color: #8E969D;
+		}
+		
+		.ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #3A77E6;
+		}
+		
+		.limenu {
+			float: left;
+		}
+		
+		li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 16px;
+			text-decoration: none;
+		}
+		
+		li a:hover {
+			background-color: #111111;
+		}
+
+        .footer{
+			width:100%;
+			heigth:300px;
+			background-color:"#3A77E6";
+			position:absolute;
+        }
+        
+        .divcomplet{
+        width:100%;
+		height:130px;
+		position: relative;
+        }
+        
+		
+		</style>
+		
+		</h:head>
+
+
+ <ui:include src="/templates/header.xhtml" />
+
+<h:body bgcolor="#ffffff">
+
+     
+
+	<table style="border: 1px solid #CAD6E0" align="center" cellpadding="0"
+		cellspacing="0" border="0" width="400">
+		
+		
+		
+		<tbody>
+
+			<tr>
+				<td class="header" height="42" align="center" valign="middle"
+					width="100%" bgcolor="#3A77E6"><ui:insert name="pageHeader"></ui:insert>
+				</td>
+			</tr>
+			<tr>
+				<td height="1" width="100%" bgcolor="#CAD6E0"></td>
+			</tr>
+
+			<tr>
+				<td width="100%" colspan="2">
+					<table width="100%" style="height: 150px" align="left"
+						cellpadding="0" cellspacing="0" border="0">
+						<tbody>
+							<tr>
+								<td align="center" width="100%" valign="middle">
+								<ui:insert name="body"></ui:insert>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="2" valign="bottom" height="1" width="100%"
+					bgcolor="#CAD6E0"></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<br/>
+	
+   
+</h:body>
+
+<ui:include src="/templates/footer.xhtml"/>
+
+</html>

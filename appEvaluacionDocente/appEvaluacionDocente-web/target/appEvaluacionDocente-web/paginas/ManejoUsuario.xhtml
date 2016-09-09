@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/template.xhtml">
+
+	<ui:define name="pageHeader">
+		<h1 style="color: #FFFFFF">Gestion De Usuarios</h1>
+	</ui:define>
+
+	<ui:define name="body">
+
+		<h:body>
+
+			<h:form id="form" prependId="false">
+
+				<br />
+
+				<h:panelGrid columns="1" id="panelDatos">
+				
+					<h:panelGrid columns="3">
+					<h:outputText value="#{msj['registrarUsuario.identificacion']}"
+						id="labelIdentificacion" for="tfIdentificacion" />
+					<p:inputText value="#{ControladorManejoUsuario.instancia.id}"
+						id="tfIdentificacion" placeholder="Identificacion" />
+					<h:message style="color:Red; margin:8px;" for="tfIdentificacion" />
+					</h:panelGrid>
+					
+					<h:panelGrid columns="3">
+					<h:outputText value="#{msj['registrarUsuario.nombre']}"
+						id="labelNombre" for="tfNombre" />
+					<p:inputText value="#{ControladorManejoUsuario.instancia.nombre}"
+						id="tfNombre" placeholder="Nombre" validator="sololetraval" />
+					<h:message style="color:Red; margin:8px;" for="tfNombre" />
+					</h:panelGrid>
+					
+					<h:panelGrid columns="3">
+					<h:outputText value="#{msj['registrarUsuario.apellido']}"
+						id="labelApellido" for="tfApellido" />
+					<p:inputText value="#{ControladorManejoUsuario.instancia.apellido}"
+						id="tfApellido" placeholder="Apellido" validator="sololetraval" />
+					<h:message style="color:Red; margin:8px;" for="tfApellido" />
+					</h:panelGrid>
+					
+					<h:panelGrid columns="3">
+					<h:outputText value="#{msj['registrarUsuario.user']}"
+						id="labelUser" for="tfUser" />
+					<p:inputText value="#{ControladorManejoUsuario.instancia.usuario}"
+						id="tfUser" placeholder="Nickname-User" />
+					<h:message style="color:Red; margin:8px;" for="tfUser" />
+					</h:panelGrid>
+					
+					<h:panelGrid columns="3">
+					<h:outputText value="#{msj['registrarUsuario.pass']}"
+						id="labelPass" for="tfPass" />
+					<p:password value="#{ControladorManejoUsuario.instancia.pass}"
+						id="tfPass" placeholder="Contraseña" />
+					<h:message style="color:Red; margin:8px;" for="tfPass" />
+					</h:panelGrid>
+					
+					<h:panelGrid columns="3">
+					<h:outputText value="#{msj['registrarUsuario.tipoUsuario']}"
+						id="labelTipo" for="comboTipo" />
+					<p:selectOneMenu value="#{ControladorManejoUsuario.tipoUser}"
+						id="comboTipo">
+
+						<f:selectItem itemValue="a" itemLabel="Seleccione una opción..." />
+						<f:selectItem itemValue="b" itemLabel="Coordinador" />
+						<f:selectItem itemValue="c" itemLabel="Decano" />
+
+						<p:ajax update="comboPrograma"
+							listener="#{ControladorManejoUsuario.cambiarCombo()}" />
+						<p:ajax update="comboFacultad"
+							listener="#{ControladorManejoUsuario.cambiarCombo()}" />
+
+					</p:selectOneMenu>
+					</h:panelGrid>
+					
+					<br />
+					<h:panelGrid columns="3">
+						<h:panelGroup id="comboFacultad">
+
+							<h:outputText value="#{msj['registrarUsuario.programa']}"
+								id="labelPro" for="comboPro"
+								rendered="#{ControladorManejoUsuario.tipoUser == 'b'}" />
+							<p:selectOneMenu value="#{ControladorManejoUsuario.programa}"
+								id="comboPro" converter="#{programaConverter}"
+								rendered="#{ControladorManejoUsuario.tipoUser == 'b'}">
+
+								<f:selectItems id="prueba"
+									value="#{ControladorManejoUsuario.programas}" var="pro"
+									itemLabel="#{pro.nombre}" itemValue="#{pro}" />
+
+							</p:selectOneMenu>
+						</h:panelGroup>
+					</h:panelGrid>
+
+					<br />
+					<h:panelGrid columns="3">
+						<h:panelGroup id="comboPrograma">
+							<h:outputText value="#{msj['registrarUsuario.facultad']}"
+								id="labelF" for="comboF"
+								rendered="#{ControladorManejoUsuario.tipoUser == 'c'}" />
+							<p:selectOneMenu value="#{ControladorManejoUsuario.facultad}"
+								id="comboF" converter="#{facultadConverter}"
+								rendered="#{ControladorManejoUsuario.tipoUser == 'c'}">
+
+								<f:selectItems value="#{ControladorManejoUsuario.facultades}"
+									var="fac" itemLabel="#{fac.nombre}" itemValue="#{fac}" />
+
+							</p:selectOneMenu>
+						</h:panelGroup>
+					</h:panelGrid>
+
+					<br />
+
+				</h:panelGrid>
+
+				<br />
+
+				<h:panelGrid columns="4" id="panelBotones">
+
+					<p:commandButton
+						action="#{ControladorManejoUsuario.registrarUsuario()}"
+						value="#{msj['registrar']}" update="panelDatos" />
+					<p:commandButton
+						action="#{ControladorManejoUsuario.buscarUsuario()}"
+						value="#{msj['buscar']}" />
+					<p:commandButton
+						action="#{ControladorManejoUsuario.editarUsuario()}"
+						value="#{msj['editar']}" />
+					<p:commandButton
+						action="#{ControladorManejoUsuario.removerUsuario()}"
+						value="#{msj['remover']}" />
+
+
+				</h:panelGrid>
+
+			</h:form>
+
+		</h:body>
+
+
+	</ui:define>
+
+
+</ui:composition>
+
+</html>

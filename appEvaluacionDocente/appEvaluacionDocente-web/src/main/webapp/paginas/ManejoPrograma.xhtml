@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" >
+	
+<ui:composition template="/templates/template.xhtml">
+
+	<ui:define name="pageHeader">
+		<h1 style="color: #FFFFFF">Gestion de Programas</h1>
+	</ui:define>
+
+	<ui:define name="body">
+		<h:body>
+			<h:form id="form" prependId="false">
+				<h:panelGrid columns="3" id="panelDatos">
+
+					<h:outputText value="#{msj ['registrarPrograma.facultad']}"
+						id="labelFacultad" for="comboFacultad" />
+					<p:selectOneMenu value="#{ControladorManejoPrograma.facultad}"
+						id="comboFacultad" converter="#{facultadConverter}">
+
+						<f:selectItems value="#{ControladorManejoPrograma.facultades}" var="facul"
+							itemValue="#{facul}" itemLabel="#{facul.nombre}" />
+
+						<!-- <p:ajax update="labelPro"
+							listener="#{ControladorManejoUsuario.cambiarCombo()}" /> -->
+
+					</p:selectOneMenu>
+
+
+					<br />
+
+
+					<h:outputText value="#{msj ['registrarPrograma.nombrePrograma']}"
+						id="labelNombrePrograma" for="tfNombrePrograma" />
+					<p:inputText value="#{ControladorManejoPrograma.programa.nombre}"
+						id="tfNombrePrograma" placeholder="Nombre del programa" />
+					<h:message style="color:Red; margin:8px;" for="tfNombrePrograma" />
+
+				</h:panelGrid>
+
+				<h:panelGrid columns="1" id="panelBotones">
+
+					<p:commandButton
+						action="#{ControladorManejoPrograma.crearPrograma()}"
+						value="#{msj['registrar']}" update="panelDatos" />
+
+				</h:panelGrid>
+			</h:form>
+		</h:body>
+	</ui:define>
+</ui:composition>
+</html>
