@@ -57,6 +57,11 @@
         	<artifactId>appEvaluacionDocente-jpa</artifactId>
         	<version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+        	<groupId>co.edu.eam.ingesoft.pa</groupId>
+        	<artifactId>appEvaluacionDocente-webService</artifactId>
+        	<version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

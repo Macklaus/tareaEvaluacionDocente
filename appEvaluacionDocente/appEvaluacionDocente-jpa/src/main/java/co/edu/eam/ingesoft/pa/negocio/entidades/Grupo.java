@@ -30,7 +30,7 @@ public class Grupo implements Serializable{
 	private String grupo;
 	
 	@Column(name="ANHO", length = 45, nullable = false)
-	private Year anho;
+	private int anho;
 	
 	@Column(name="PERIODO", length = 45, nullable = false)
 	private int periodo;
@@ -45,7 +45,7 @@ public class Grupo implements Serializable{
 
 	/* Constructor */
 	
-	public Grupo(String id, String grupo, Year anho, int periodo, Asignatura asignatura, Docente docente) {
+	public Grupo(String id, String grupo, int anho, int periodo, Asignatura asignatura, Docente docente) {
 		super();
 		this.id = id;
 		this.grupo = grupo;
@@ -77,11 +77,11 @@ public class Grupo implements Serializable{
 		this.grupo = grupo;
 	}
 
-	public Year getAnho() {
+	public int getAnho() {
 		return anho;
 	}
 
-	public void setAnho(Year anho) {
+	public void setAnho(int anho) {
 		this.anho = anho;
 	}
 

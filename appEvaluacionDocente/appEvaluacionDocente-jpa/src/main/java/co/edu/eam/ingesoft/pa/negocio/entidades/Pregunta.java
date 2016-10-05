@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -19,8 +21,11 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "T_PREGUNTA")
+@NamedQueries({@NamedQuery(name = Pregunta.LISTAR_PREGUNTAS, query = "select pre from Pregunta pre")})
 public class Pregunta implements Serializable {
 
+	public static final String LISTAR_PREGUNTAS = "Pregunta.listarPreguntas";
+	
 	/* Atributos */
 	
 	@Id

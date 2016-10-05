@@ -27,13 +27,13 @@ public class Facultad implements Serializable {
 	@Column(name="ID_FACULTAD", length = 45, nullable=false)
 	private String id;
 	
-	@Column(name="NOMBRE", length = 45, nullable=false)
+	@Column(name="NOMBRE", length = 70, nullable=false)
 	private String nombre;
 
 	/* Constructor */
 	
 	public Facultad(){
-		
+		super();
 	}
 
 	public Facultad(String id, String nombre) {

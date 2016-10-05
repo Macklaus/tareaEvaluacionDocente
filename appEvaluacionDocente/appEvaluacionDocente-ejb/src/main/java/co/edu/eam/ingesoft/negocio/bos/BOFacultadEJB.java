@@ -13,8 +13,7 @@ import co.edu.eam.ingesoft.pa.negocio.entidades.Facultad;
 
 @LocalBean
 @Stateless
-@Remote(IFacultadEJBRemote.class)
-public class BOFacultadEJB extends EJBGenerico<Facultad> implements IFacultadEJBRemote{
+public class BOFacultadEJB extends EJBGenerico<Facultad> {
 
 	@Override
 	public void crear(Facultad entidad) {
@@ -58,7 +57,6 @@ public class BOFacultadEJB extends EJBGenerico<Facultad> implements IFacultadEJB
 		return Facultad.class;
 	}
 
-	@Override
 	public List<Facultad> listarFacultades() {
 		return dao.ejecutarNamedQuery(Facultad.LISTAR_FACULTADES);
 	}

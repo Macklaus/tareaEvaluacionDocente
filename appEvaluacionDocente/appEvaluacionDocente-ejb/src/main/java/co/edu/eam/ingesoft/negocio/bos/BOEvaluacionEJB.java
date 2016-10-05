@@ -1,16 +1,13 @@
 package co.edu.eam.ingesoft.negocio.bos;
 
-import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
 import co.edu.eam.ingesoft.negocio.excepcion.ExcepcionFuncional;
 import co.edu.eam.ingesoft.negocio.implementacion.EJBGenerico;
-import co.edu.eam.ingesoft.negocio.interfaces.IEvaluacionEJBRemote;
 import co.edu.eam.ingesoft.pa.negocio.entidades.Evaluacion;
 
 @Stateless
-@Remote(IEvaluacionEJBRemote.class)
-public class BOEvaluacionEJB extends EJBGenerico<Evaluacion> implements IEvaluacionEJBRemote{
+public class BOEvaluacionEJB extends EJBGenerico<Evaluacion>{
 
 	@Override
 	public void crear(Evaluacion entidad) {

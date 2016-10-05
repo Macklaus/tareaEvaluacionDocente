@@ -23,10 +23,13 @@ co\edu\eam\ingesoft\negocio\bos\BOSuperAdminEJB.class
 co\edu\eam\ingesoft\negocio\bos\BOCoordinadorEJB.class
 co\edu\eam\ingesoft\negocio\bos\BOEvaluacionEJB.class
 co\edu\eam\ingesoft\negocio\seguridad\SeguridadEJB.class
+co\edu\eam\ingesoft\negocio\dto\RespEvaluacionDTO.class
 co\edu\eam\ingesoft\negocio\bos\BOFacultadEJB.class
+co\edu\eam\ingesoft\negocio\dto\PreguntaDTO.class
 co\edu\eam\ingesoft\negocio\interfaces\InterfaceEJBRemote.class
 co\edu\eam\ingesoft\negocio\interfaces\ISuperAdminEJBRemote.class
 co\edu\eam\ingesoft\negocio\bos\webService\WsdlEJB.class
+co\edu\eam\ingesoft\negocio\bos\rest\CalificarEvaluacionEJB.class
 co\edu\eam\ingesoft\negocio\bos\BODecanoEJB.class
 co\edu\eam\ingesoft\negocio\interfaces\IRespuestaEJBRemote.class
 co\edu\eam\ingesoft\negocio\interfaces\IEvaluacionEJBRemote.class

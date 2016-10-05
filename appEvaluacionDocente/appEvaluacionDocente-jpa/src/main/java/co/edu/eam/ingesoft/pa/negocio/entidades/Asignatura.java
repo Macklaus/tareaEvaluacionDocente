@@ -26,7 +26,7 @@ public class Asignatura implements Serializable{
 	@Column(name="ID_ASIGNATURA", length = 45, nullable = false)
 	private String id;
 	
-	@Column(name="Nombre", length = 45, nullable = false)
+	@Column(name="Nombre", length = 70, nullable = false)
 	private String nombre;
 	
 	@ManyToOne

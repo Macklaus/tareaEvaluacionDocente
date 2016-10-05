@@ -5,7 +5,7 @@ package test.clase.testWebService;
 
 import javax.ejb.EJB;
 
-import org.caferrer.testdata.junit.ArquillianUtil;
+//import org.caferrer.testdata.junit.ArquillianUtil;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -26,26 +26,26 @@ import test.clase.PruebaPregunta;
 @RunWith(Arquillian.class)
 public class PruebaWSDL {
 
-	@EJB
-	private WsdlEJB wsdlEJB;
-	
-	@Deployment
-	public static EnterpriseArchive desplegar(){
-		 
-		EnterpriseArchive ear= ArquillianUtil.createDeployment("../appEvaluacionDocente-ear/target/appEvaluacionDocente-ear.ear");
-		ear.addAsLibraries(ShrinkWrap.create(JavaArchive.class).addClass(PruebaWSDL.class));
-		return ear;
-		
-	}
-	
-	@Test
-	public void testBuscarEstudiante(){
-		Assert.assertNotNull(wsdlEJB.serviciosAcademicos("123", "123"));
-	}
-	
-	@Test
-	public void testBuscarCursosEstudiante(){
-		Assert.assertNotNull(wsdlEJB.buscarCursosEstudiantes("123", "123"));
-	}
+//	@EJB
+//	private WsdlEJB wsdlEJB;
+//	
+//	@Deployment
+//	public static EnterpriseArchive desplegar(){
+//		 
+//		EnterpriseArchive ear= ArquillianUtil.createDeployment("../appEvaluacionDocente-ear/target/appEvaluacionDocente-ear.ear");
+//		ear.addAsLibraries(ShrinkWrap.create(JavaArchive.class).addClass(PruebaWSDL.class));
+//		return ear;
+//		
+//	}
+//	
+//	@Test
+//	public void testBuscarEstudiante(){
+//		Assert.assertNotNull(wsdlEJB.serviciosAcademicos("123", "123"));
+//	}
+//	
+//	@Test
+//	public void testBuscarCursosEstudiante(){
+//		Assert.assertNotNull(wsdlEJB.buscarCursosEstudiantes("123", "123"));
+//	}
 	
 }

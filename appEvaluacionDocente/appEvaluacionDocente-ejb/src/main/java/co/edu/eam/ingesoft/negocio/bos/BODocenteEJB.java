@@ -1,16 +1,15 @@
 package co.edu.eam.ingesoft.negocio.bos;
 
-import javax.ejb.Remote;
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
 import co.edu.eam.ingesoft.negocio.excepcion.ExcepcionFuncional;
 import co.edu.eam.ingesoft.negocio.implementacion.EJBGenerico;
-import co.edu.eam.ingesoft.negocio.interfaces.IDocenteEJBRemote;
 import co.edu.eam.ingesoft.pa.negocio.entidades.Docente;
 
 @Stateless
-@Remote(IDocenteEJBRemote.class)
-public class BODocenteEJB extends EJBGenerico<Docente> implements IDocenteEJBRemote{
+@LocalBean
+public class BODocenteEJB extends EJBGenerico<Docente> {
 
 	@Override
 	public void crear(Docente entidad) {

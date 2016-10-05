@@ -1,16 +1,13 @@
 package co.edu.eam.ingesoft.negocio.bos;
 
-import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
 import co.edu.eam.ingesoft.negocio.excepcion.ExcepcionFuncional;
 import co.edu.eam.ingesoft.negocio.implementacion.EJBGenerico;
-import co.edu.eam.ingesoft.negocio.interfaces.IGrupoEJBRemote;
 import co.edu.eam.ingesoft.pa.negocio.entidades.Grupo;
 
 @Stateless
-@Remote(IGrupoEJBRemote.class)
-public class BOGrupoEJB extends EJBGenerico<Grupo> implements IGrupoEJBRemote{
+public class BOGrupoEJB extends EJBGenerico<Grupo>{
 
 	@Override
 	public void crear(Grupo entidad) {
@@ -24,7 +21,7 @@ public class BOGrupoEJB extends EJBGenerico<Grupo> implements IGrupoEJBRemote{
 
 	@Override
 	public Grupo buscar(Object pk) {
-		return buscar(pk);
+		return super.buscar(pk);
 	}
 
 	@Override

@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -28,6 +30,7 @@ public class Respuesta implements Serializable {
 	
 	@Id
 	@Column(name="ID_RESPUESTA", length = 45, nullable = false)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private String id;
 	
 	@Column(name="FECHA_HORA", nullable = false)
@@ -43,9 +46,8 @@ public class Respuesta implements Serializable {
 
 	/* Controladores */
 	
-	public Respuesta(String id, Date fecha_hora, String comentario, Grupo grupo) {
+	public Respuesta(Date fecha_hora, String comentario, Grupo grupo) {
 		super();
-		this.id = id;
 		this.fechaHora = fecha_hora;
 		this.comentario = comentario;
 		this.grupo = grupo;

@@ -5,7 +5,7 @@ package test.clase;
 
 import javax.ejb.EJB;
 
-import org.caferrer.testdata.junit.ArquillianUtil;
+//import org.caferrer.testdata.junit.ArquillianUtil;
 import org.caferrer.testdata.junit.TestDataUtil;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -31,34 +31,34 @@ import co.edu.eam.ingesoft.pa.negocio.entidades.Pregunta;
 @RunWith(Arquillian.class)
 public class PruebaPregunta {
 
-	@EJB
-	private BOPreguntaEJB preguntaEJB;
-	
-	@Deployment
-	public static EnterpriseArchive desplegar(){
-		 
-		EnterpriseArchive ear= ArquillianUtil.createDeployment("../appEvaluacionDocente-ear/target/appEvaluacionDocente-ear.ear");
-		ear.addAsLibraries(ShrinkWrap.create(JavaArchive.class).addClass(PruebaPregunta.class));
-		return ear;
-		
-	}
-
-	
-	@Test
-	public void testCrearPregunta(){
-		Pregunta p = new Pregunta();
-		
-		p.setTexto("Pregunta de la prueba");
-		p.setValor(5);
-		preguntaEJB.crear(p);
-		
-		Pregunta pre = preguntaEJB.buscar(p.getId());
-		Assert.assertEquals("Pregunta de la prueba", pre.getTexto());
-	}
-	
-	@AfterClass
-	public static void finPrueba(){
-		TestDataUtil.ejecutarSQL("sqlTest/testPregunta-fin.sql");
-	}
+//	@EJB
+//	private BOPreguntaEJB preguntaEJB;
+//	
+//	@Deployment
+//	public static EnterpriseArchive desplegar(){
+//		 
+//		EnterpriseArchive ear= ArquillianUtil.createDeployment("../appEvaluacionDocente-ear/target/appEvaluacionDocente-ear.ear");
+//		ear.addAsLibraries(ShrinkWrap.create(JavaArchive.class).addClass(PruebaPregunta.class));
+//		return ear;
+//		
+//	}
+//
+//	
+//	@Test
+//	public void testCrearPregunta(){
+//		Pregunta p = new Pregunta();
+//		
+//		p.setTexto("Pregunta de la prueba");
+//		p.setValor(5);
+//		preguntaEJB.crear(p);
+//		
+//		Pregunta pre = preguntaEJB.buscar(p.getId());
+//		Assert.assertEquals("Pregunta de la prueba", pre.getTexto());
+//	}
+//	
+//	@AfterClass
+//	public static void finPrueba(){
+//		TestDataUtil.ejecutarSQL("sqlTest/testPregunta-fin.sql");
+//	}
 	
 }

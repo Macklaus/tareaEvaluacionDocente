@@ -7,7 +7,7 @@ import java.util.List;
 
 import javax.ejb.EJB;
 
-import org.caferrer.testdata.junit.ArquillianUtil;
+//import org.caferrer.testdata.junit.ArquillianUtil;
 import org.caferrer.testdata.junit.TestDataUtil;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -35,7 +35,7 @@ import co.edu.eam.ingesoft.pa.negocio.entidades.Programa;
 @RunWith(Arquillian.class)
 public class PruebaPrograma {
 
-	@EJB
+	/*@EJB
 	private BOProgramaEJB programaEJB;
 	
 	@EJB
@@ -70,6 +70,6 @@ public class PruebaPrograma {
 	@AfterClass
 	public static void finPrueba(){
 		TestDataUtil.ejecutarSQL("sqlTest/testPrograma-fin.sql");
-	}
+	}*/
 	
 }

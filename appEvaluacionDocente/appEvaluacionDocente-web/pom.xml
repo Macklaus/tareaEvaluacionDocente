@@ -166,6 +166,12 @@
 		</dependency>
 
 
+		<dependency>
+			<groupId>co.edu.eam.ingesoft.pa</groupId>
+			<artifactId>appEvaluacionDocente-webService</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -5,7 +5,7 @@ package test.clase;
 
 import javax.ejb.EJB;
 
-import org.caferrer.testdata.junit.ArquillianUtil;
+//import org.caferrer.testdata.junit.ArquillianUtil;
 import org.caferrer.testdata.junit.TestDataUtil;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -30,40 +30,40 @@ import co.edu.eam.ingesoft.pa.negocio.entidades.Usuario;
 public class PruebaUsuario {
 
 	
-	@EJB
-	private BOUsuarioEJB usuarioEJB;
-	
-	
-	@Deployment
-	public static EnterpriseArchive desplegar(){
-		 
-		EnterpriseArchive ear= ArquillianUtil.createDeployment("../appEvaluacionDocente-ear/target/appEvaluacionDocente-ear.ear");
-		ear.addAsLibraries(ShrinkWrap.create(JavaArchive.class).addClass(PruebaUsuario.class));
-		return ear;
-		
-	}
-	
-	
-	
-	@Test
-	public void testCrearPregunta(){
-		Usuario u = new Usuario();
-		u.setApellido("cardona");
-		u.setId(123456789);
-		u.setNombre("sebastian");
-		u.setPass("1234");
-		u.setUsuario("sebas");
-		usuarioEJB.crear(u);
-		
-		
-		Usuario usu = usuarioEJB.buscar(123456789);
-		Assert.assertNotNull(usu);
-	}
-	
-	@AfterClass
-	public static void finPrueba(){
-		TestDataUtil.ejecutarSQL("sqlTest/testUsuario-fin.sql");
-	}
+//	@EJB
+//	private BOUsuarioEJB usuarioEJB;
+//	
+//	
+//	@Deployment
+//	public static EnterpriseArchive desplegar(){
+//		 
+//		EnterpriseArchive ear= ArquillianUtil.createDeployment("../appEvaluacionDocente-ear/target/appEvaluacionDocente-ear.ear");
+//		ear.addAsLibraries(ShrinkWrap.create(JavaArchive.class).addClass(PruebaUsuario.class));
+//		return ear;
+//		
+//	}
+//	
+//	
+//	
+//	@Test
+//	public void testCrearPregunta(){
+//		Usuario u = new Usuario();
+//		u.setApellido("cardona");
+//		u.setId(123456789);
+//		u.setNombre("sebastian");
+//		u.setPass("1234");
+//		u.setUsuario("sebas");
+//		usuarioEJB.crear(u);
+//		
+//		
+//		Usuario usu = usuarioEJB.buscar(123456789);
+//		Assert.assertNotNull(usu);
+//	}
+//	
+//	@AfterClass
+//	public static void finPrueba(){
+//		TestDataUtil.ejecutarSQL("sqlTest/testUsuario-fin.sql");
+//	}
 	
 	
 }

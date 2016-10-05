@@ -13,8 +13,7 @@ import co.edu.eam.ingesoft.pa.negocio.entidades.Programa;
 
 @LocalBean
 @Stateless
-@Remote(IProgramaEJBRemote.class)
-public class BOProgramaEJB extends EJBGenerico<Programa> implements IProgramaEJBRemote{
+public class BOProgramaEJB extends EJBGenerico<Programa> {
 
 	@Override
 	public void crear(Programa entidad) {
@@ -60,7 +59,14 @@ public class BOProgramaEJB extends EJBGenerico<Programa> implements IProgramaEJB
 		return Programa.class;
 	}
 
-	@Override
+	/**
+	 * metodo para listar todos los programas
+	 * @author Sebastian Cardona Morales<br/>
+	 *         email: krdona-k44@hotmail.com<br/>
+	 *         Fecha: 27/09/2016<br/>
+	 * @return una lista de programas con todos los 
+	 * programas
+	 */
 	public List<Programa> listarProgramas() {
 		return dao.ejecutarNamedQuery(Programa.LISTAR_PROGRAMAS);
 	}

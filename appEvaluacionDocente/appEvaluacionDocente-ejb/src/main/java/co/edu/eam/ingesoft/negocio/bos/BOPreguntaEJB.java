@@ -1,5 +1,7 @@
 package co.edu.eam.ingesoft.negocio.bos;
 
+import java.util.List;
+
 import javax.ejb.LocalBean;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
@@ -11,8 +13,7 @@ import co.edu.eam.ingesoft.pa.negocio.entidades.Pregunta;
 
 @LocalBean
 @Stateless
-@Remote(IPreguntaEJBRemote.class)
-public class BOPreguntaEJB extends EJBGenerico<Pregunta> implements IPreguntaEJBRemote{
+public class BOPreguntaEJB extends EJBGenerico<Pregunta>{
 
 	@Override
 	public void crear(Pregunta entidad) {
@@ -54,6 +55,18 @@ public class BOPreguntaEJB extends EJBGenerico<Pregunta> implements IPreguntaEJB
 	@Override
 	public Class getClase() {
 		return Pregunta.class;
+	}
+	
+	/**
+	 * metodo para listar todas las preguntas
+	 * @author Sebastian Cardona Morales<br/>
+	 *         email: krdona-k44@hotmail.com<br/>
+	 *         Fecha: 27/09/2016<br/>
+	 * @return una lista de preguntas con todas las 
+	 * preguntas
+	 */
+	public List<Pregunta> listarPreguntas(){
+		return dao.ejecutarNamedQuery(Pregunta.LISTAR_PREGUNTAS);
 	}
 
 }

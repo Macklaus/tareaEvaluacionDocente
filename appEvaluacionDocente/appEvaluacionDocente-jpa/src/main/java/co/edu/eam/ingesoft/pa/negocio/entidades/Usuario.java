@@ -24,7 +24,6 @@ import javax.xml.bind.annotation.XmlSeeAlso;
 @Table(name = "T_USUARIO")
 @Inheritance(strategy = InheritanceType.JOINED)
 @NamedQueries({ @NamedQuery(name = Usuario.BUSCAR_POR_USER, query = "select u from Usuario u where u.usuario=?1") })
-@XmlSeeAlso({Decano.class, Coordinador.class,SuperAdmin.class})
 public class Usuario implements Serializable {
 
 	public static final String BUSCAR_POR_USER = "Usuario.buscarporuser";

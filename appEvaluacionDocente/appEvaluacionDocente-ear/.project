@@ -3,6 +3,7 @@
 	<name>appEvaluacionDocente-ear</name>
 	<comment></comment>
 	<projects>
+		<project>appEvaluacionDocente-webService</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -31,7 +31,7 @@ public class Programa  implements Serializable {
 	@Column(name="ID_PROGRAMA", length = 45, nullable=false)
 	private String id;
 	
-	@Column(name="NOMBRE", length = 45, nullable=false)
+	@Column(name="NOMBRE", length = 70, nullable=false)
 	@Size(min = 3, max = 45, message = "La longitud del nombre es incorrecta")
 	private String nombre;
 	

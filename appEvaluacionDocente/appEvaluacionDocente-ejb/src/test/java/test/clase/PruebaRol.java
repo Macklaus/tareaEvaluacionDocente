@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.EJB;
 
-import org.caferrer.testdata.junit.ArquillianUtil;
+//import org.caferrer.testdata.junit.ArquillianUtil;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -29,27 +29,27 @@ import co.edu.eam.ingesoft.pa.negocio.seguridad.Rol;
 public class PruebaRol {
 
 	
-	@EJB
-	private SeguridadEJB seguridadEJB;
-	
-	@EJB
-	private BOUsuarioEJB usuarioEJB;
-	
-	
-	@Deployment
-	public static EnterpriseArchive desplegar(){
-		 
-		EnterpriseArchive ear= ArquillianUtil.createDeployment("../appEvaluacionDocente-ear/target/appEvaluacionDocente-ear.ear");
-		ear.addAsLibraries(ShrinkWrap.create(JavaArchive.class).addClass(PruebaRol.class));
-		return ear;
-	}
-	
-	
-	@Test
-	public void rolesTest(){
-		Usuario u = usuarioEJB.buscarUsuarioPorUser("cris");
-		List<Rol> listaRoles = seguridadEJB.listarRolesUsuario(u);
-		Assert.assertEquals(1,listaRoles.size());
-	}
+//	@EJB
+//	private SeguridadEJB seguridadEJB;
+//	
+//	@EJB
+//	private BOUsuarioEJB usuarioEJB;
+//	
+//	
+//	@Deployment
+//	public static EnterpriseArchive desplegar(){
+//		 
+//		EnterpriseArchive ear= ArquillianUtil.createDeployment("../appEvaluacionDocente-ear/target/appEvaluacionDocente-ear.ear");
+//		ear.addAsLibraries(ShrinkWrap.create(JavaArchive.class).addClass(PruebaRol.class));
+//		return ear;
+//	}
+//	
+//	
+//	@Test
+//	public void rolesTest(){
+//		Usuario u = usuarioEJB.buscarUsuarioPorUser("cris");
+//		List<Rol> listaRoles = seguridadEJB.listarRolesUsuario(u);
+//		Assert.assertEquals(1,listaRoles.size());
+//	}
 	
 }

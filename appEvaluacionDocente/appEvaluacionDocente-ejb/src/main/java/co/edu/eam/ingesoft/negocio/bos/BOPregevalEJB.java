@@ -1,15 +1,12 @@
 package co.edu.eam.ingesoft.negocio.bos;
 
-import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
 import co.edu.eam.ingesoft.negocio.implementacion.EJBGenerico;
-import co.edu.eam.ingesoft.negocio.interfaces.IPregevalEJBRemote;
 import co.edu.eam.ingesoft.pa.negocio.entidades.Pregeval;
 
 @Stateless
-@Remote(IPregevalEJBRemote.class)
-public class BOPregevalEJB extends EJBGenerico<Pregeval> implements IPregevalEJBRemote{
+public class BOPregevalEJB extends EJBGenerico<Pregeval>{
 
 	@Override
 	public void crear(Pregeval entidad) {

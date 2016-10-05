@@ -1,5 +1,6 @@
 package co.edu.eam.ingesoft.negocio.bos;
 
+import javax.ejb.LocalBean;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
@@ -9,8 +10,8 @@ import co.edu.eam.ingesoft.negocio.interfaces.IAsignaturaEJBRemote;
 import co.edu.eam.ingesoft.pa.negocio.entidades.Asignatura;
 
 @Stateless
-@Remote(IAsignaturaEJBRemote.class)
-public class BOAsignaturaEJB extends EJBGenerico<Asignatura> implements IAsignaturaEJBRemote {
+@LocalBean
+public class BOAsignaturaEJB extends EJBGenerico<Asignatura> {
 
 	@Override
 	public void crear(Asignatura entidad) throws ExcepcionFuncional {
